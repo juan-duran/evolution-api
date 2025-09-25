@@ -10,6 +10,7 @@
     "removeComments": true,
     "outDir": "./dist",
     "noEmitOnError": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": false,
