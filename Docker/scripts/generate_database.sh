@@ -6,6 +6,12 @@ if [ "$DOCKER_ENV" != "true" ]; then
     export_env_vars
 fi
 
+# 🚀 Skip migrations safely when building on Render
+if [ "$RENDER" == "true" ]; then
+    echo "Skipping database generation in Render build"
+    exit 0
+fi
+
 if [[ "$DATABASE_PROVIDER" == "postgresql" || "$DATABASE_PROVIDER" == "mysql" ]]; then
     export DATABASE_URL
     echo "Generating database for $DATABASE_PROVIDER"
